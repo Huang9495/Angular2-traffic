@@ -18,16 +18,18 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  constructor(private service: AuthService) {
+  constructor(@Inject('auth') private service) {
   }
 
- onClick(car) {
- console.log(car);
- this.AuthService.send(car).subscribe(
- data => {
- alert('ok');}, 
- error => console.log(error));
- }
+   onClick(car) {
+   console.log(car);
+   this.service.send(car).subscribe(
+   data =>{
+   console.log(data);
+   }, 
+   error => console.log(error));
+   }
+
 }
 
 
