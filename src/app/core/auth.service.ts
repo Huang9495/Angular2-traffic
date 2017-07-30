@@ -12,8 +12,9 @@ export class AuthService {
 
   constructor(private http: Http) { }
 
-    sendCar(car): Observable<any> {
+    send(car): Observable<any> {
     console.log('ok');
-    return this.http.post('/api/tk1/addcar', JSON.stringify(car), this.options);
+    var abc = {"ab":car};
+    return this.http.post('http://localhost:3000/api/tk1/addcar', abc,this.options);
   }
 }
