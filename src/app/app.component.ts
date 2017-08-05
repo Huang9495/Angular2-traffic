@@ -5,6 +5,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 
 import { AuthService } from './core/auth.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,14 +13,15 @@ import { AuthService } from './core/auth.service';
 })
 
 
-
 export class AppComponent implements OnInit {
-  car = "";
-  ngOnInit(): void {
-  }
 
   constructor(@Inject('auth') private service) {
   }
+  ngOnInit(){
+  }
+
+  car = "";
+  msg : string;
 
    onClick(car) {
    console.log(car);
@@ -30,7 +32,12 @@ export class AppComponent implements OnInit {
    error => console.log(error));
    }
 
-}
+   sendMsg(msg){
+   console.log('1111111111111111111111');
+   console.log(msg);
+   this.service.sendMessage(msg);
+  }
 
+}
 
 
