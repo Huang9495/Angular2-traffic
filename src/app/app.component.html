@@ -1,4 +1,9 @@
 <div>
       <input #car type="text"/> 
-      <button type="submit" (click)="onClick(car.value) car.value=''">Submit</button>
+      <button type="submit" (click)="onClick(car.value)">Submit</button>
  </div>
+
+ <div>
+    <input type="text" #msgInput name="" value="">
+    <button (click)="sendMsg(msgInput.value)">Send</button>
+</div>
